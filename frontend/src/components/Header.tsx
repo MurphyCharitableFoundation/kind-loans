@@ -40,7 +40,7 @@ function Header({ sectionTitle }: { sectionTitle: string }) {
   }
 
   return (
-    <AppBar position="sticky" elevation={0}>
+    <AppBar position="sticky" elevation={4}>
       <Container maxWidth="lg" sx={{ p: 0 }}>
         <Toolbar disableGutters sx={{ px: 2 }}>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -125,7 +125,9 @@ function Header({ sectionTitle }: { sectionTitle: string }) {
             </Link>
           )}
         </Toolbar>
+        {sectionTitle!=""&&
         <SectionTitle title={sectionTitle} />
+        }{/* do not show while there are not title */}
       </Container>
     </AppBar>
   );
